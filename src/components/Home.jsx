@@ -30,7 +30,7 @@ const Home = () => {
       <ImagePreview
         loading={loading}
         uploaded={uploadImage}
-        enhanced={enhancedImage.image}
+        enhanced={enhancedImage?.image}
       />
     </>
   );
