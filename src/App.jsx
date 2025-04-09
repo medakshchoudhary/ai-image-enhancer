@@ -5,7 +5,7 @@ import Footer from './components/Footer'
 
 const App = () => {
   return (
-    <div className='p-[4rem] w-full min-h-screen flex flex-col items-center justify-between bg-black text-white'>
+    <div className='p-[2rem] w-full min-h-screen flex flex-col items-center justify-between bg-black text-white'>
       <Header />
     
       <Home />
