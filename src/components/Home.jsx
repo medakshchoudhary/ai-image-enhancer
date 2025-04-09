@@ -1,7 +1,7 @@
 import ImageUpload from "./ImageUpload";
 import ImagePreview from "./ImagePreview";
 import { useState } from "react";
-import { enhancedImageAPI } from "../utils/enhanceImageApi";
+import { enhancedImageAPI } from "../utils/enhancedImageApi";
 
 const Home = () => {
   const [uploadImage, setUploadImage] = useState(null);
@@ -19,7 +19,7 @@ const Home = () => {
       setLoading(false);
     } catch (error) {
       console.log(error)
-      alert("Error in enhacing the image, Please try again later")
+      alert("Error in enhancing the image, Please try again later")
     }
 
   }
@@ -30,7 +30,7 @@ const Home = () => {
       <ImagePreview
         loading={loading}
         uploaded={uploadImage}
-        enhance={enhancedImage}
+        enhanced={enhancedImage.image}
       />
     </>
   );
