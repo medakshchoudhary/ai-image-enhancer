@@ -2,7 +2,7 @@ import axios from "axios";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 const BASE_URL = 'https://techhk.aoscdn.com';
-
+const MAXIMUM_RETRIES = 20;
 
 export const enhancedImageAPI = async (file) => {
     try{
@@ -55,14 +55,13 @@ const fetchEnhancedImage = async (taskId) => {
     return data.data;;  
 }
 
-
 const pollingForEnhancedImage = async (taskId,retries=0) => {
     const result = await fetchEnhancedImage(taskId);
 
     if(result.state === 4){
-        console.log("Processing");
+        console.log(`Processing... ${retries}/${MAXIMUM_RETRIES}`);
 
-        if(retries>=20){
+        if(retries>=MAXIMUM_RETRIES){
             throw new Error('Max retries reached, image enhancement failed');
         }
 
