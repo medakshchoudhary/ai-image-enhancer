@@ -1,4 +1,11 @@
-const ImageUpload = () => {
+const ImageUpload = (props) => {
+
+  const ShowImageHandler = (e) => {
+    const file = e.target.files[0];
+    props.UploadImageHandler(file);
+  }
+
+
   return (
     <div className="bg-white rounded-2xl p-5">
       <label
@@ -11,6 +18,7 @@ const ImageUpload = () => {
           id="fileInput"
           accept="image/*"
           className="hidden"
+          onChange={ShowImageHandler}
         />
         <span className="font-medium text-md text-gray-600">
           Click or drag to upload your image
